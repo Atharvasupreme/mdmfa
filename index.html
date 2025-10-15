@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab Inventory Management</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body class="dark-theme">
+    <header>
+        <div class="container" style="max-width: 1400px; margin: 0 auto; padding: 0 20px;">
+            <h1>[INV_SYS] LAB INVENTORY TRACKER</h1>
+            <p>System operational: Tracking quantity and value in Indian Rupees (₹).</p>
+            <nav class="main-nav">
+                <a href="index.html" class="nav-link active">DASHBOARD</a>
+                <a href="add_item.html" class="nav-link">ITEM_FORM</a>
+                <a href="contact.html" class="nav-link">CONTACT_LOGISTICS</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main-content-wrapper container">
+        <section class="results-panel">
+            <div class="header-actions" style="display: flex; justify-content: space-between; align-items: center;">
+                <h2>Current Stock & Status Report</h2>
+                <a href="add_item.html" class="action-link-btn animated-btn" style="padding: 8px 15px; font-weight: normal;">+ ADD NEW ITEM</a>
+            </div>
+            
+            <div class="analysis-section">
+                
+                <div class="analysis-box large-value-box hover-lift">
+                    <h4>CURRENT TOTAL VALUE (INR)</h4>
+                    <span id="totalValueDisplay">₹0.00</span>
+                </div> 
+                
+                <div class="analysis-box metric-box hover-lift">
+                    <h4>TOTAL UNIQUE ITEMS</h4>
+                    <span id="itemCountDisplay" style="font-size: 2rem; color: var(--color-text-main);">0</span>
+                </div>
+                
+                <div class="analysis-box metric-box hover-lift" id="lowStockAlert">
+                    <h4>STOCK HEALTH STATUS</h4>
+                    <span id="lowStockMessage" style="font-family: var(--font-mono); font-weight: 700;">Status: All stock healthy.</span>
+                </div>
+            </div>
+
+            <div class="table-container" style="margin-top: 30px;">
+                <table id="inventoryTable">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Item Name</th>
+                            <th>Unit Price (₹)</th>
+                            <th>Stock Status</th>
+                            <th>Quantity</th>
+                            <th>Current Value (₹)</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+        
+    </main>
+    <div id="modal-container" class="modal-container"></div>
+    <audio id="bg-music" loop preload="auto">
+        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-8.mp3" type="audio/mpeg">
+    </audio>
+
+    <script src="script.js"></script>
+</body>
+</html>
